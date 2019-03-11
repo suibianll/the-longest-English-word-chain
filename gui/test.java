@@ -8,13 +8,15 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JOptionPane;
 import java.io.*;
+import java.awt.Color;
 
 public class test extends JFrame{
 
     int size=9;
-    JButton []jbs=new JButton[size];
+    public static JButton []jbs=new JButton[9];
     public static String s = "123124124";
-
+    public static boolean w = false,c = false,h = false,t = false,n = false;
+    
     
 
     public static void main(String[] args) {
@@ -55,6 +57,18 @@ public class test extends JFrame{
             jbs[1].addActionListener(input2);
             Monitor3 output = new Monitor3();
             jbs[2].addActionListener(output);
+
+            Monitor4 wm = new Monitor4();
+            jbs[3].addActionListener(wm);
+            Monitor5 cm = new Monitor5();
+            jbs[4].addActionListener(cm);
+            Monitor6 hm = new Monitor6();
+            jbs[5].addActionListener(hm);
+            Monitor7 tm = new Monitor7();
+            jbs[6].addActionListener(tm);
+            Monitor8 nm = new Monitor8();
+            jbs[7].addActionListener(nm);
+
             
             this.setLayout(new GridLayout(3,3));
             
@@ -109,5 +123,41 @@ class Monitor3 implements ActionListener{
         JOptionPane.showMessageDialog(null, test.s);
     }
 }
+
+class Monitor4 implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+        if(test.w == true){test.w = false;test.jbs[3].setForeground(Color.black);}
+        else {test.w = true;test.jbs[3].setForeground(Color.red);}
+    }
+}
+
+class Monitor5 implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+        if(test.c == true){test.c = false;test.jbs[4].setForeground(Color.black);}
+        else {test.c = true;test.jbs[4].setForeground(Color.red);}
+    }
+}
+
+class Monitor6 implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+       if(test.h == true){test.h = false;test.jbs[5].setForeground(Color.black);}
+        else {test.h = true;test.jbs[5].setForeground(Color.red);}
+    }
+}
+
+class Monitor7 implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+       if(test.t == true){test.t = false;test.jbs[6].setForeground(Color.black);}
+        else {test.t = true;test.jbs[6].setForeground(Color.red);}
+    }
+}
+
+class Monitor8 implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+        if(test.n == true){test.n = false;test.jbs[7].setForeground(Color.black);}
+        else {test.n = true;test.jbs[7].setForeground(Color.red);}
+    }
+}
+
 
 
